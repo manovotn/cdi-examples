@@ -10,6 +10,8 @@ public class Main {
                 .addBeanClasses(GreetingBean.class); // add a bean to the synthetic bean archive
         try (SeContainer cdiContainer = seContainerInitializer.initialize()) {
             // use dynamic resolution to select a bean and invoke its method
+            // same as Instance<Object>#select().get()
+            // same as @Inject GreetingBean
             cdiContainer.select(GreetingBean.class).get().sayHello();
         }
     }

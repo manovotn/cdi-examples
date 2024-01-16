@@ -1,6 +1,5 @@
 package org.jug.cdi.examples.common;
 
-import jakarta.enterprise.inject.Any;
 import jakarta.enterprise.util.AnnotationLiteral;
 import jakarta.inject.Qualifier;
 

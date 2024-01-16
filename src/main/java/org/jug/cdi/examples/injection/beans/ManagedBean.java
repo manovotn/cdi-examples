@@ -23,6 +23,7 @@ public class ManagedBean {
 
 
     // class could become a bean but has invalid constructor
+    // Weld will log a WARN message
     // can still become a bean if you use a producer, see BeanProducer
     @ApplicationScoped
     public static class ProducedBean {
@@ -31,8 +32,8 @@ public class ManagedBean {
         }
     }
 
-    // inner classes cannot become beans; despite the scope annotation, this class will not be recognized
-    // Weld will log a WARN message
+    // inner classes cannot become beans
+    // despite the scope annotation, this class will not be recognized
     @ApplicationScoped
     public class NotaBean {
 

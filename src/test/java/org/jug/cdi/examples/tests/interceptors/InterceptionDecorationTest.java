@@ -28,12 +28,14 @@ public class InterceptionDecorationTest {
     public void testInterception() {
         InterceptedBean.orderOfInvocations.clear();
         bean.ping();
-        List<Class<?>> expectedOrder = List.of(FirstInterceptor.class, InterceptedBean.class, FirstInterceptor.class);
+        List<Class<?>> expectedOrder = List.of(FirstInterceptor.class, InterceptedBean.class,
+                FirstInterceptor.class);
         Assertions.assertEquals(expectedOrder, InterceptedBean.orderOfInvocations);
 
         InterceptedBean.orderOfInvocations.clear();
         bean.pong();
-        expectedOrder = List.of(FirstInterceptor.class, SecondInterceptor.class, InterceptedBean.class, SecondInterceptor.class, FirstInterceptor.class);
+        expectedOrder = List.of(FirstInterceptor.class, SecondInterceptor.class,
+                InterceptedBean.class, SecondInterceptor.class, FirstInterceptor.class);
         Assertions.assertEquals(expectedOrder, InterceptedBean.orderOfInvocations);
     }
 

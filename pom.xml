@@ -92,6 +92,4 @@
             </plugin>
         </plugins>
     </build>
-
-<!--    TODO maven plugin for main execution from terminal?-->
 </project>
